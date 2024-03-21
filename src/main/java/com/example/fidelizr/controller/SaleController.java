@@ -17,7 +17,7 @@ public class SaleController {
 
         @ApiOperation(value = "Crear venta",
                 notes = "Servicio para crear venta")
-        @ApiResponses(value = { @ApiResponse(code = 201, message = "Ventacreada correctamente"),
+        @ApiResponses(value = { @ApiResponse(code = 201, message = "Venta creada correctamente"),
                 @ApiResponse(code = 400, message = "Solicitud inválida"),
                 @ApiResponse(code = 500, message = "Error en el servidor") })
         @PostMapping(value = "", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
