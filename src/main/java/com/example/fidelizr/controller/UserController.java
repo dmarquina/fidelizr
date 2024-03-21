@@ -4,7 +4,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(tags = "Users")
 @RestController
 @RequestMapping("/users")
-public class UserRestController {
+public class UserController {
 
         @ApiOperation(value = "Listar plantas por usuario",
                 notes = "Servicio para listar las plantas por usuario")
