@@ -1,25 +1,25 @@
 package com.example.fidelizr.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.fidelizr.dto.request.SaleRequest;
 
-@Api(tags = "Sales")
+@Tag(name = "Plan2t", description = "the Plant Api")
 @RestController
 @RequestMapping("/sales")
 public class SaleController {
 
-        @ApiOperation(value = "Crear venta",
-                notes = "Servicio para crear venta")
-        @ApiResponses(value = { @ApiResponse(code = 201, message = "Venta creada correctamente"),
-                @ApiResponse(code = 400, message = "Solicitud inválida"),
-                @ApiResponse(code = 500, message = "Error en el servidor") })
+        @Operation(summary = "Crear venta",
+                description = "Servicio para crear venta")
+        @ApiResponses(value = { @ApiResponse(responseCode = "201", description = "Venta creada correctamente"),
+                @ApiResponse(responseCode = "400", description = "Solicitud inválida"),
+                @ApiResponse(responseCode = "500", description = "Error en el servidor") })
         @PostMapping(value = "", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
                 produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
         public ResponseEntity<String> createUser(@RequestBody SaleRequest saleRequest) {
